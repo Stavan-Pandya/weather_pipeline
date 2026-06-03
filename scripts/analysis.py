@@ -4,19 +4,26 @@ from sqlalchemy import create_engine
 
 engine = create_engine("sqlite:///database/weather.db")
 
-query = "SELECT * FROM weather"
+# SQL Query
+query = """
+SELECT city, AVG(temperature) as avg_temp
+FROM weather
+GROUP BY city
+"""
 
 df = pd.read_sql(query, engine)
 
+print("\nAverage Temperature Data")
 print(df)
 
+# Chart
 df.plot(
     x="city",
-    y="temperature",
+    y="avg_temp",
     kind="bar"
 )
 
-plt.title("City Temperature")
+plt.title("Average Temperature by City")
 plt.ylabel("Temperature °C")
 
 plt.savefig("output/weather_chart.png")

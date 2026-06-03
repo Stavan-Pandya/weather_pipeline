@@ -1,6 +1,6 @@
 import os
 
-print("Starting Weather Data Pipeline...\n")
+print("Starting Multi-City Weather Data Pipeline...\n")
 
 os.system("python scripts/extract.py")
 os.system("python scripts/transform.py")

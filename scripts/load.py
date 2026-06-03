@@ -5,6 +5,12 @@ df = pd.read_csv("data/weather_transformed.csv")
 
 engine = create_engine("sqlite:///database/weather.db")
 
-df.to_sql("weather", engine, if_exists="replace", index=False)
+# Historical loading
+df.to_sql(
+    "weather",
+    engine,
+    if_exists="append",
+    index=False
+)
 
-print("Data loaded into SQLite database!")
+print("\nData loaded into SQLite database!")

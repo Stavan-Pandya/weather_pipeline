@@ -1,2 +1,6 @@
-city,temperature,humidity,pressure,weather,wind_speed,timestamp
-Bangalore,29.54,55,1009,Rain,0.78,2026-06-01 18:39:48.600256
+city,temperature,feels_like,temp_min,temp_max,humidity,pressure,weather,wind_speed,clouds,visibility,timestamp
+Bangalore,29.12,32.43,26.73,30.2,67,1007,Clouds,5.24,96,10000,2026-06-03 15:29:17.449523
+Delhi,39.8,38.8,39.8,39.8,19,999,Clear,2.5,0,10000,2026-06-03 15:29:17.654302
+Mumbai,31.39,37.71,31.39,31.39,67,1005,Clear,6.27,0,10000,2026-06-03 15:29:17.832337
+Ahmedabad,41.07,42.49,41.07,41.07,24,1001,Clouds,2.56,17,10000,2026-06-03 15:29:18.034542
+Chennai,35.51,42.51,33.89,36.16,62,1003,Clouds,2.24,86,10000,2026-06-03 15:29:18.327492
