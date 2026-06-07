@@ -1,11 +1,20 @@
 import pandas as pd
 from sqlalchemy import create_engine
+import sys
+import os
+
+sys.path.append(
+    os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__))
+    )
+)
+
+from config import DATABASE_URL
 
 df = pd.read_csv("data/weather_transformed.csv")
 
-engine = create_engine("sqlite:///database/weather.db")
+engine = create_engine(DATABASE_URL)
 
-# Historical loading
 df.to_sql(
     "weather",
     engine,
@@ -13,4 +22,4 @@ df.to_sql(
     index=False
 )
 
-print("\nData loaded into SQLite database!")
+print("Data loaded into PostgreSQL successfully!")

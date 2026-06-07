@@ -3,3 +3,4 @@ requests
 sqlalchemy
 matplotlib
 streamlit
+psycopg2-binary

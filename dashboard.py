@@ -2,6 +2,8 @@ import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 from sqlalchemy import create_engine
+from config import DATABASE_URL
+
 
 st.set_page_config(page_title="Weather Dashboard", layout="wide")
 
@@ -17,7 +19,7 @@ h2, h3 {font-size: 20px;}
 
 st.title("Weather Analytics Dashboard")
 
-engine = create_engine("sqlite:///database/weather.db")
+engine = create_engine(DATABASE_URL)
 df = pd.read_sql("SELECT * FROM weather", engine)
 df["timestamp"] = pd.to_datetime(df["timestamp"])
 
@@ -166,3 +168,4 @@ GROUP BY city;
         except Exception as e:
             
             st.error(e)
+            
